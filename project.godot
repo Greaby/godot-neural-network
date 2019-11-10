@@ -10,12 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "Activation",
+"language": "GDScript",
+"path": "res://Activation.gd"
+}, {
+"base": "Node",
 "class": "Matrix",
 "language": "GDScript",
 "path": "res://matrix.gd"
+}, {
+"base": "Node",
+"class": "NeuralNetwork",
+"language": "GDScript",
+"path": "res://NeuralNetwork.gd"
 } ]
 _global_script_class_icons={
-"Matrix": ""
+"Activation": "",
+"Matrix": "",
+"NeuralNetwork": ""
 }
 
 [application]
