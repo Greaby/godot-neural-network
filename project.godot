@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Activation",
 "language": "GDScript",
-"path": "res://Activation.gd"
+"path": "res://activation.gd"
 }, {
 "base": "Node",
 "class": "Matrix",
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "NeuralNetwork",
 "language": "GDScript",
-"path": "res://NeuralNetwork.gd"
+"path": "res://neural_network.gd"
 } ]
 _global_script_class_icons={
 "Activation": "",
@@ -35,6 +35,10 @@ _global_script_class_icons={
 config/name="neural-network"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "gut" )
 
 [rendering]
 

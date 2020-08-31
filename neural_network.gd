@@ -13,33 +13,34 @@ var bias_output: Matrix
 
 var learning_rate: float
 
-var activation_function
-var activation_dfunction
+var activation_function: FuncRef
+var activation_dfunction: FuncRef
 
-func _init(_input_nodes: int, _hidden_nodes: int, _output_nodes: int):
+func _init(_input_nodes: int, _hidden_nodes: int, _output_nodes: int) -> void:
+	randomize()
 	input_nodes = _input_nodes;
 	hidden_nodes = _hidden_nodes;
 	output_nodes = _output_nodes;
 	
-	weights_input_hidden = Matrix.new(hidden_nodes, input_nodes)
-	weights_hidden_output = Matrix.new(output_nodes, hidden_nodes);
+	weights_input_hidden = Matrix.rand(Matrix.new(hidden_nodes, input_nodes))
+	weights_hidden_output = Matrix.rand(Matrix.new(output_nodes, hidden_nodes));
 	
-	bias_hidden = Matrix.new(hidden_nodes, 1);
-	bias_output = Matrix.new(output_nodes, 1);
+	bias_hidden = Matrix.rand(Matrix.new(hidden_nodes, 1));
+	bias_output = Matrix.rand(Matrix.new(output_nodes, 1));
 	
-	setLearningRate()
-	setActivationFunction()
+	set_learning_rate()
+	set_activation_function()
 
 
-func setLearningRate(_learning_rate: float = 0.01):
+func set_learning_rate(_learning_rate: float = 0.1) -> void:
 	learning_rate = _learning_rate
 
-func setActivationFunction(callback = funcref(Activation, "sigmoid"), dcallback = funcref(Activation, "dsigmoid")):
+func set_activation_function(callback: FuncRef = funcref(Activation, "sigmoid"), dcallback: FuncRef = funcref(Activation, "dsigmoid")) -> void:
 	activation_function = callback
 	activation_dfunction = dcallback
 
 func predict(input_array: Array):
-	var inputs = Matrix.fromArray(input_array)
+	var inputs = Matrix.from_array(input_array)
 	
 	var hidden = Matrix.product(weights_input_hidden, inputs)
 	hidden = Matrix.add(hidden, bias_hidden)
@@ -49,12 +50,12 @@ func predict(input_array: Array):
 	output = Matrix.add(output, bias_output)
 	output = Matrix.map(output, activation_function)
 
-	return Matrix.toArray(output)
+	return Matrix.to_array(output)
 
 
 func train(input_array: Array, target_array: Array):
-	var inputs = Matrix.fromArray(input_array)
-	var targets = Matrix.fromArray(target_array)
+	var inputs = Matrix.from_array(input_array)
+	var targets = Matrix.from_array(target_array)
 	
 	var hidden = Matrix.product(weights_input_hidden, inputs);
 	hidden = Matrix.add(hidden, bias_hidden)
@@ -89,3 +90,4 @@ func train(input_array: Array, target_array: Array):
 	weights_input_hidden = Matrix.add(weights_input_hidden, weight_ih_deltas)
 
 	bias_hidden = Matrix.add(bias_hidden, hidden_gradient)
+
