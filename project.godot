@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Activation",
 "language": "GDScript",
-"path": "res://activation.gd"
+"path": "res://lib/activation.gd"
 }, {
 "base": "Reference",
 "class": "Matrix",
 "language": "GDScript",
-"path": "res://matrix.gd"
+"path": "res://lib/matrix.gd"
 }, {
 "base": "Reference",
 "class": "NeuralNetwork",
 "language": "GDScript",
-"path": "res://neural_network.gd"
+"path": "res://lib/neural_network.gd"
 } ]
 _global_script_class_icons={
 "Activation": "",

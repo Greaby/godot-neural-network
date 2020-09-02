@@ -16,7 +16,7 @@ func _init(_rows: int, _cols: int, value: float = 0.0) -> void:
 
 # workaround issue #21461
 static func getClass():
-	return load("res://matrix.gd")
+	return load("res://lib/matrix.gd")
 
 
 static func from_array(arr: Array) -> Matrix:

@@ -38,7 +38,7 @@ func set_activation_function(callback: FuncRef = funcref(Activation, "sigmoid"),
 	activation_function = callback
 	activation_dfunction = dcallback
 
-func predict(input_array: Array):
+func predict(input_array: Array) -> Array:
 	var inputs = Matrix.from_array(input_array)
 	
 	var hidden = Matrix.product(weights_input_hidden, inputs)
@@ -89,4 +89,3 @@ func train(input_array: Array, target_array: Array):
 	weights_input_hidden = Matrix.add(weights_input_hidden, weight_ih_deltas)
 
 	bias_hidden = Matrix.add(bias_hidden, hidden_gradient)
-
