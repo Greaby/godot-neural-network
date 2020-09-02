@@ -1,4 +1,3 @@
-extends Node
 class_name Matrix
 
 var rows: int
@@ -110,7 +109,7 @@ static func transpose(matrix: Matrix) -> Matrix:
 	return result
 
 
-static func map(matrix: Matrix, callback) -> Matrix:
+static func map(matrix: Matrix, callback: FuncRef) -> Matrix:
 	var result = getClass().new(matrix.rows, matrix.cols)
 	
 	for row in range(result.rows):

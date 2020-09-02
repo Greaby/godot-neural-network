@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "Reference",
 "class": "Activation",
 "language": "GDScript",
 "path": "res://activation.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "Matrix",
 "language": "GDScript",
 "path": "res://matrix.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "NeuralNetwork",
 "language": "GDScript",
 "path": "res://neural_network.gd"
@@ -33,12 +33,12 @@ _global_script_class_icons={
 [application]
 
 config/name="neural-network"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "gut" )
+enabled=PoolStringArray(  )
 
 [rendering]
 

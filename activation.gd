@@ -1,4 +1,3 @@
-extends Node
 class_name Activation
 
 static func sigmoid(value: float, row: int, col: int) -> float:

@@ -1,4 +1,3 @@
-extends Node
 class_name NeuralNetwork
 
 var input_nodes: int
