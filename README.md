@@ -1,6 +1,6 @@
 # Neural Network: Multilayer Perceptron - Godot Engine
 
-This is a follow-up to my first [perceptron](https://github.com/Greaby/godot-perceptron).
+This is a follow-up to my first project on the [perceptron](https://github.com/Greaby/godot-perceptron).
 
 To solve non-linear problems, we need to connect several perceptrons together to create a neural network.
 In the example, the multilayer perceptron resolve a XOR operation.
