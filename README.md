@@ -9,7 +9,7 @@ See also my projects :
 - [godot-perceptron](https://github.com/Greaby/godot-perceptron)
 - [godot-neuroevolution](https://github.com/Greaby/godot-neuroevolution)
 
-# How to use
+## How to use
 
 
 Create a new neural network with his number of inputs, hidden layers and outputs.
@@ -23,3 +23,12 @@ To train the neural network, pass the input values and the expected result to th
 ```gdscript
 neural_network.train([INPUT_1, INPUT_X...], EXEPTED_RESULT)
 ```
+
+## Dependencies
+
+This project require Godot Engine 3.3.
+
+## Licenses
+
+-   The source code is available under the MIT license.
+
